@@ -27,6 +27,9 @@ def register(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
+            next_url = request.GET.get('next')
+            if next_url:
+                return redirect(next_url)
             return redirect('bills')
     else:
         form = CustomUserCreationForm()
