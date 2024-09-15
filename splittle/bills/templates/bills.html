@@ -75,6 +75,12 @@
         {% if not bills %}
             <p>No bills available for this group.</p>
         {% endif %}
+        <div class="button-container"></div>
+            <!-- Button to view joined groups -->
+            <a href="{% url 'create_bill' group.id %}">
+                <button type="button">Create Bill</button>
+            </a>
+        </div>
     </div>
 </body>
 </html>
