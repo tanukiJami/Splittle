@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'bills',
     'groups',
     'homePage',
+    'share'
 ]
 
 MIDDLEWARE = [

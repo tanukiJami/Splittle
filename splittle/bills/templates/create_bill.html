@@ -1,0 +1,13 @@
+<!-- templates/create_bill.html -->
+<form method="POST">
+    {% csrf_token %}
+    {{ bill_form.as_p }}
+    
+    <h3>Items</h3>
+    {{ item_formset.management_form }}
+    {% for form in item_formset %}
+        {{ form.as_p }}
+    {% endfor %}
+    
+    <button type="submit">Create Bill</button>
+</form>
