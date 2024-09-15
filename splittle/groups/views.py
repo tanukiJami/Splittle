@@ -1,6 +1,7 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from .forms import GroupCreationForm
 from django.contrib.auth.models import Group, User
+
 
 def viewGroups(request):
     # Get all groups the logged-in user is part of
@@ -35,6 +36,3 @@ def createGroup(request):
         form = GroupCreationForm()
     
     return render(request, 'createGroup.html', {'form': form})
-
-def bills(request):
-    return render(request, 'bills.html')
