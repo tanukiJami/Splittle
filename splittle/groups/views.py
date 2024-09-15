@@ -35,3 +35,6 @@ def createGroup(request):
         form = GroupCreationForm()
     
     return render(request, 'createGroup.html', {'form': form})
+
+def bills(request):
+    return render(request, 'bills.html')
