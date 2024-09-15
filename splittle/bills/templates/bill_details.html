@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Details</title>
+</head>
+<body>
+    <h1>Bill Details</h1>
+    <h2>{{ bill.name }}</h2>
+    <p>Amount: {{ bill.amount }}</p>
+    
+    <h3>Items:</h3>
+    <ul>
+        {% for item in items %}
+            <li>
+                {{ item.name }} - {{ item.price }}
+                <!-- You can add more details about each item here -->
+            </li>
+        {% endfor %}
+    </ul>
+    
+    <!-- Form for adding new items -->
+    <h3>Add New Item:</h3>
+    <form method="post" action="{% url 'bill_details' group.id bill.id %}">
+        {% csrf_token %}
+        {{ item_form.as_p }}
+        <button type="submit">Add Item</button>
+    </form>
+    
+    <!-- Add any other information or links you want to display -->
+    <a href="{% url 'assign_users_to_items' bill.id %}">Assign Users to Items</a>
+    
+    <!-- Link back to the list of bills -->
+    <a href="{% url 'bills' group.id %}">Back to Bills</a>
+</body>
+</html>

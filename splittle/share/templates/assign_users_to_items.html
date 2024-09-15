@@ -1,0 +1,13 @@
+<!-- templates/assign_users_to_items.html -->
+<form method="POST">
+    {% csrf_token %}
+    {% for item, formset in item_shares.items %}
+        <h3>{{ item.name }} - {{ item.price }}</h3>
+        {{ formset.management_form }}
+        {% for form in formset %}
+            {{ form.as_p }}
+        {% endfor %}
+    {% endfor %}
+    
+    <button type="submit">Assign Users</button>
+</form>

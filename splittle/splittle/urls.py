@@ -23,5 +23,6 @@ urlpatterns = [
     path("bills/", include("bills.urls")),
     path("homePage/", include("homePage.urls")),
     path("groups/", include("groups.urls")),
+    path("share/", include("share.urls"))
 
 ]
