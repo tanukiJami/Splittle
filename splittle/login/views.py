@@ -13,7 +13,7 @@ def login(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             auth_login(request, user)
-            return redirect('landingPage')  # Redirect to 'home' after successful login
+            return redirect('bills')  # Redirect to 'home' after successful login
         else:
             # If authentication fails, return the login page with an error
             return render(request, 'landingPage.html', {'error': 'Invalid login credentials'})
@@ -23,10 +23,11 @@ def login(request):
     
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('login')
+            return redirect('bills')
     else:
         form = CustomUserCreationForm()
+    #If form is invalid, reloads register with the form
     return render(request, 'register.html', {'form': form})
