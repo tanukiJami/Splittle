@@ -56,6 +56,22 @@
         .details-link:hover {
             background-color: #0056b3;
         }
+        .button-container {
+            margin-top: 20px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -75,8 +91,8 @@
         {% if not bills %}
             <p>No bills available for this group.</p>
         {% endif %}
-        <div class="button-container"></div>
-            <!-- Button to view joined groups -->
+
+        <div class="button-container">
             <a href="{% url 'create_bill' group.id %}">
                 <button type="button">Create Bill</button>
             </a>

@@ -21,6 +21,10 @@
             max-width: 600px;
             width: 100%;
             box-sizing: border-box;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
         }
         h3 {
             margin-bottom: 10px;
@@ -41,6 +45,9 @@
         button:hover {
             background-color: #0056b3;
         }
+        .item-container {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -52,10 +59,12 @@
             {{ bill_form.as_p }}
             
             <h3>Items</h3>
-            {{ item_formset.management_form }}
-            {% for form in item_formset %}
-                {{ form.as_p }}
-            {% endfor %}
+            <div class="item-container">
+                {{ item_formset.management_form }}
+                {% for form in item_formset %}
+                    {{ form.as_p }}
+                {% endfor %}
+            </div>
             
             <button type="submit">Create Bill</button>
         </form>
