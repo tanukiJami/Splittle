@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create a Group</title>
+    <title>Create Group</title>
 </head>
 <body>
-    <h1>Create a New Group</h1>
-    <p>This page will contain a form to create a new group.</p>
+    <h1>Create a Group</h1>
+    <form class="site-form" action="{% url 'createGroup' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }} <!-- Django form rendering -->
+        <input type="submit" value="Submit">
+    </form>
+    </form>
 </body>
 </html>

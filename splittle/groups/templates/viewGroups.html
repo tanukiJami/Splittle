@@ -3,10 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Joined Groups</title>
+    <title>Joined Groups</title>
 </head>
 <body>
     <h1>Your Groups</h1>
-    <p>This page will display the groups you have joined.</p>
+
+    {% if user_groups %}
+        <ul>
+            {% for group in user_groups %}
+                <li>{{ group.name }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You are not part of any groups yet.</p>
+    {% endif %}
 </body>
 </html>
