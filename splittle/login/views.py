@@ -14,7 +14,7 @@ def login(request):
         print("Authenticated user:", user)
         if user is not None:
             auth_login(request, user)
-            return redirect('bills')  # Redirect to 'home' after successful login
+            return redirect('homePage')  # Redirect to 'home' after successful login
         else:
             # If authentication fails, return the login page with an error
             return render(request, 'landingPage.html', {'error': 'Invalid login credentials'})
@@ -30,7 +30,7 @@ def register(request):
             next_url = request.GET.get('next')
             if next_url:
                 return redirect(next_url)
-            return redirect('bills')
+            return redirect('homePage')
     else:
         form = CustomUserCreationForm()
     #If form is invalid, reloads register with the form
