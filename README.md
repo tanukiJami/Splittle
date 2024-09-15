@@ -1,2 +1,2 @@
 # Splittle
-VTHacks12 Project repository
+VTHacks12 Splittle project repository.
