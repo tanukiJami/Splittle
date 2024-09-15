@@ -1,4 +1,5 @@
 from django.shortcuts import render
 
 def homePage(request):
-    return render(request, 'homePage.html')
+    username = request.user.username
+    return render(request, 'homePage.html', {'username':username})
