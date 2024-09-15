@@ -52,10 +52,14 @@
         <h1>Home</h1>
         <div class="button-container">
             <!-- Button to view joined groups -->
-            <button onclick = location.href = "{% url 'viewGroups' %}">View Joined Groups</button>
-        
+            <a href="{% url 'viewGroups' %}">
+                <button type="button">View Joined Groups</button>
+            </a>
+            
             <!-- Button to create a new group -->
-            <button onclick = location.href = "{% url 'createGroup' %}">Create a Group</button>
+            <a href="{% url 'createGroup' %}">
+                <button type="button">Create a Group</button>
+            </a>
         </div>
     </div>
 </body>
