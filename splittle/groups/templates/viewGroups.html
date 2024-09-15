@@ -3,22 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joined Groups</title>
+    <title>Your Groups</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+        .group-link {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .group-link:hover {
+            background-color: #0056b3;
+        }
+        .no-groups {
+            color: #333;
+            font-size: 16px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Your Groups</h1>
+    <div class="container">
+        <h1>Your Groups</h1>
 
-    {% if user_groups %}
-        <ul>
-            {% for group in user_groups %}
-                <li>
-                    <a href="{% url 'bills' group.id %}">{{ group.name }}</a>
-                </li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>You are not part of any groups yet.</p>
-    {% endif %}
+        {% if user_groups %}
+            <ul>
+                {% for group in user_groups %}
+                    <li>
+                        <a href="{% url 'bills' group.id %}" class="group-link">{{ group.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="no-groups">You are not part of any groups yet.</p>
+        {% endif %}
+    </div>
 </body>
 </html>
