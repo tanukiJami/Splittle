@@ -11,6 +11,7 @@ def login(request):
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
+        print("Authenticated user:", user)
         if user is not None:
             auth_login(request, user)
             return redirect('bills')  # Redirect to 'home' after successful login
