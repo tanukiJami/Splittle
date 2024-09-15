@@ -4,9 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joined Groups</title>
+	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+	<style>
+		body {
+			color: #0E166B;
+			font-family: "Outfit", system-ui;
+  			font-optical-sizing: auto;
+  			font-weight: 400;
+  			font-style:normal;
+			
+		}
+	header{ 
+	
+	display: flex;
+	width: 100%;
+	padding: 10px;
+	background-color: #F4D565;
+	align-items: center;
+	
+	justify-content:center;
+	height: 50px;
+	font-family:'Futura Bk BT';
+	}
+/*the whole blue header bar*/
+	.header-content { 
+			width: 100%;
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-between;
+			align-items:center;
+		}
+h1 {
+    text-align: center;
+}
+
+		
+	</style>
 </head>
 
 <body>
+	<div class="header-content">
+		<header>
+			
+		<a href="#" target="_blank" class="header-content">
+			
+		</a>
+			
+		</header>
+	</div>
     <h1>Your Groups</h1>
 
     {% if user_groups %}

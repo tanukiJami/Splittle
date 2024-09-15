@@ -4,21 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Splittle - Login</title>
+	<link href="https://fonts.googleapis.com/css2?family=Calistoga&family=DM+Serif+Display:ital@0;1&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <style>
         /* Basic inline CSS for centering */
         body {
-            display: flex;
+          	font-family: "Outfit", system-ui;
+  			font-weight: 400;
+ 			font-style: normal;
+			color: #0E166B;
+			display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             background-color: #f4f4f4;
         }
+		header {
+			font-family: "Calistoga", serif;
+  			font-weight: 400;
+  			font-style: normal;
+			text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.20);
+		}
         .container {
-            background: white;
-            border-radius: 8px;
+            border-radius: 20px;
+			background: #F4D565;
+			box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             max-width: 400px;
             width: 100%;
             box-sizing: border-box;
@@ -42,8 +54,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>Splittle</h1>
-        <p>Welcome to Splittle! Please login to continue.</p>
+        <header><h1>Splittle</h1>
+		</header>
+        <p>Welcome to <strong>Splittle</strong>! Please login to continue.</p>
 
         <!-- Login Form -->
         <form action="{% url 'Login' %}" method="POST">
@@ -55,6 +68,7 @@
             <input type="password" id="password" name="password" required><br><br>
 
             <input type="submit" value="Login">
+				
         </form>
 
         {% if error %}
