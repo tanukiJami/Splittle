@@ -2,5 +2,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path("", views.bills, name = "bills"),
+    # Other URL patterns
+    path('group/<int:group_id>/bills/', views.bills, name='bills'),
 ]

@@ -1,2 +1,22 @@
-<h1> Bills </h1>
-<p> This is the page where we handle bills </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ group.name }}'s Bills</title>
+</head>
+
+<body>
+    <h1>Bills for {{ group.name }}</h1>
+
+    {% if bills %}
+        <ul>
+            {% for bill in bills %}
+                <li>{{ bill.description }} - Amount: {{ bill.amount }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No bills available for this group.</p>
+    {% endif %}
+</body>
+</html>
