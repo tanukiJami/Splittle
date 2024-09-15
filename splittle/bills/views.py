@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
-from models import Bill
+from .models import Bill
 
 # Create your views here.
 @login_required
