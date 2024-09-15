@@ -11,6 +11,7 @@ def login(request):
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
+        print("Authenticated user:", user)
         if user is not None:
             auth_login(request, user)
             return redirect('bills')  # Redirect to 'home' after successful login
@@ -26,6 +27,9 @@ def register(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
+            next_url = request.GET.get('next')
+            if next_url:
+                return redirect(next_url)
             return redirect('bills')
     else:
         form = CustomUserCreationForm()

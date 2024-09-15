@@ -46,7 +46,7 @@
         <p>Welcome to Splittle! Please login to continue.</p>
 
         <!-- Login Form -->
-        <form action="{% url 'Landing Page' %}" method="POST">
+        <form action="{% url 'Login' %}" method="POST">
             {% csrf_token %}
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required><br><br>
