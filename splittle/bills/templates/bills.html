@@ -70,7 +70,7 @@
         {% endif %}
 
         <!-- Leave Group Form -->
-        <form action="{% url 'leaveGroup' group.id %}" method="post">
+        <form action="{% url 'leaveGroup' %}" method="post">
             {% csrf_token %}
             <button type="submit" class="group-button">Leave Group</button>
         </form>

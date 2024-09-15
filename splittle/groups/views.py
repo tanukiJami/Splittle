@@ -4,24 +4,24 @@ from django.contrib.auth.models import Group, User
 from .models import Group, Membership
 from django.contrib.auth.decorators import login_required
 from django.http import Http404
+from django.contrib import messages
 
 
 @login_required
 def leaveGroup(request, group_id):
-    # Try to get the group object; raise a 404 if not found
+    # Get the group object
     group = get_object_or_404(Group, id=group_id)
-
+    
     # Find the membership entry for the current user in this group
     membership = Membership.objects.filter(user=request.user, group=group).first()
 
     # If the membership exists, delete it (user leaves the group)
     if membership:
         membership.delete()
-    else:
-        raise Http404("You are not a member of this group.")
+        messages.success(request, f'You have successfully left the group "{group.name}".')
 
-    # Redirect the user back to the list of groups or homepage
-    return redirect('view_groups')
+    # Redirect the user back to the viewGroups page (or another page of your choice)
+    return redirect('viewGroups')  # Redirect to your preferred page, like 'bills' or 'viewGroups'
 
 def viewGroups(request):
     # Get all groups the logged-in user is part of
