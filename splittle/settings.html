@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Splittle settings</title>
+	
+	<style>
+		
+/*body, background, containers*/
+body {
+	background: #E7E8EC;
+    display: flex;
+	flex-direction: column;
+	font-family: "Montserrat Regular";
+	margin: 0;
+	font-style:normal;
+	font-weight: 300;
+	color: #121212;
+	font-size: 10px;
+	height: 100vh; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+	
+	}
+/*navigation bar*/
+header{ 
+	
+	display: flex;
+	width: 100%;
+	padding: 20px;
+	background-color: #708AE8;
+	align-items: center;
+	justify-content: 10px; 
+	height: 100px;
+	font-family:'Futura Bk BT';
+	}
+/*the whole blue header bar*/
+	.header-content { 
+			width: 100%;
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-between;
+			align-items:center;
+		}
+		
+/*gear icon*/
+	.header-svg { 
+		width: 50px;
+		height: auto;
+	}
+		
+	/*container*/
+	.container {
+		background: #efefed;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: left;	
+		margin-top: 20px;
+		height: calc(100vh + 1000px);
+		}
+	</style>
+	
+<!--Style done -->
+	
+</head>
+<body>
+	<div class="header-content">
+		<header>
+			
+		<a href="#" target="_blank" class="header-content">
+			<img src="{% static 'settings.svg' %}" alt="Settings" class="header-svg">
+		</a>
+			
+		</header>
+	</div>
+	<div class="container">
+        <h2>Account Settings</h2>
+        <a href="#">
+		
+		</a>
+	</div>
+	
+</body>
+</html>
