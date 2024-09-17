@@ -13,6 +13,12 @@
                 <a href="{% url 'bill_details' group.id bill.id %}">Details</a>
             </li>
         {% endfor %}
+        <div class="button-container">
+            <!-- Button to view joined groups -->
+            <a href="{% url 'create_bill' group.id %}">
+                <button type="button">Create Bill</button>
+            </a>
+        </div>
     </ul>
 </body>
 </html>
